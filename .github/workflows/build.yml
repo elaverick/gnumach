@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: autoreconf
+      run: autoreconf --install
     - uses: actions/checkout@v3
     - name: configure
       run: ../configure --prefix= --host=i686-gnu LD=i686-linux-gnu-ld CC=i686-linux-gnu-gcc
