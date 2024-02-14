@@ -13,8 +13,10 @@ jobs:
 
     steps:
     - name: autoreconf
-      run: ../autoreconf --install
+      run: autoreconf --install
     - uses: actions/checkout@v3
+    - name: chdir Build
+      run: cd build
     - name: configure
       run: ../configure --prefix= --host=i686-gnu LD=i686-linux-gnu-ld CC=i686-linux-gnu-gcc
     - name: make
